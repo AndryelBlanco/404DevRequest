@@ -1,0 +1,170 @@
+html {
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background: #131B23;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 12px;
+}
+
+/*Navbar styles*/
+
+.navbar-colored {
+    background: #16202A !important;
+}
+
+.nav-item {
+    transition: .3s ease-in-out;
+}
+
+    .nav-item:hover a {
+        color: #FF715B !important;
+        transform: translateY(-2px);
+    }
+
+.reset-a{
+    text-decoration: none;
+
+    color: #fff;
+    font-weight: 500;
+    transition: .4s ease;
+}
+
+.reset-a:hover{
+    filter: opacity(.9);
+}
+
+/*End NavbarStyles*/
+
+/*Todo Page styles*/
+
+.page-title {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #FFF;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    width: 80%;
+    height: fit-content;
+
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.reset-width {
+    min-width: 100% !important;
+}
+
+.todo-item-div-blue {
+    background: #0E508D !important;
+    border-radius: 6px !important;
+}
+
+.accordion-button::after, .accordion-button, .accordion-button:not(.collapsed) {
+    color: #fff;
+   
+}
+
+.accordion-button:after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accordion-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-item-text-date {
+    color: #0BE2FF !important;
+    font-size: 14px;
+}
+
+.todo-date-icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.todo-icons-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hr-colored{
+    background: #fff;
+    color: #fff;
+}
+
+.button-close-alert {
+    width: 30px !important;
+    height: 30px !important;
+
+    background: #fff;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 154px 80px rgba(0, 0, 0, 0.15), 0px 19.2832px 10.0172px rgba(0, 0, 0, 0.075);
+
+    transition: .4s ease;
+}
+
+.button-close-alert:hover{
+    filter: opacity(.5);
+}
+
+.alert-green {
+    display: flex;
+    gap: 1rem;
+
+    min-width: 100%;
+    max-width: 26rem;
+    height: 50px;
+    
+    margin: 0 auto;
+    padding: 16px;
+
+    background: #28FF64;
+}
+
+.alert-blue {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    height: 50px;
+    background: #407BFF;
+}
+/*End Todo Page styles*/
+
