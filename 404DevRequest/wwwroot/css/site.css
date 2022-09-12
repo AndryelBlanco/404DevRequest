@@ -19,6 +19,14 @@ body {
     background: #131B23;
 }
 
+.navbar-toggler {
+    background: #FF715B;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -60,6 +68,9 @@ body {
 .page-title {
     font-family: 'IBM Plex Mono', monospace;
     color: #FFF;
+    user-select: none;
+
+    margin-bottom: 2rem;
 }
 
 .page-container {

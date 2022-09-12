@@ -1,27 +1,25 @@
 ﻿@model _404DevRequest.Models.TodoItem
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create ToDo |";
 }
 
-<h1>Create</h1>
+<h1 class="page-title">Create new Todo</h1>
 
-<h4>TodoItem</h4>
-<hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Create" method="post" class="todo-form">
+        <form asp-action="Create" id="create-task-form" method="post" class="todo-form">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group ">
                 <label asp-for="TaskTitle" class=" form-label"></label>
                 <input asp-for="TaskTitle" class="todo-input" />
                 <span asp-validation-for="TaskTitle" class="text-danger"></span>
             </div>
-          @*  <div class="form-group">
+            @*  <div class="form-group">
                 <label asp-for="CreatedAt" class=" form-label"></label>
                 <input asp-for="CreatedAt" class="todo-input" />
                 <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>*@
+                </div>*@
             <div class="form-group">
                 <label asp-for="Description" class=" form-label"></label>
                 <input asp-for="Description" class="todo-input" />
@@ -30,22 +28,26 @@
             <div class="form-group">
                 <label asp-for="Priority" class=" form-label"></label>
                 <select asp-for="Priority" class="todo-input">
-                    <option value="1">Low</option>
-                    <option value="2">Medium</option>
-                    <option value="3">High</option>
+                    <option value="1" class="options">Low</option>
+                    <option value="2" class="options">Medium</option>
+                    <option value="3" class="options">High</option>
                 </select>
                 <span asp-validation-for="Priority" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
         </form>
+        <div class="buttons-container mt-4">
+            <div class="row w-100 d-flex justify-content-end">
+                <div class="col-md-3 col-sm-3">
+                    <a asp-action="Index" class="btn todo-button-back">Back to List</a>
+                </div>
+                <div class="col-md-4 col-sm-5 ">
+                    <input type="submit" form="create-task-form" value="Create" class="btn todo-button-create" />
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{

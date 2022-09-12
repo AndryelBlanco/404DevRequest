@@ -4,49 +4,50 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1 class="page-title">Edit @Model.TaskTitle</h1>
 
-<h4>TodoItem</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+    <div class="col-md-12">
+        <form asp-action="Edit" id="edit-task-form" method="post" class="todo-form">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="TaskTitle" class="control-label"></label>
-                <input asp-for="TaskTitle" class="form-control" />
+            <div class="form-group ">
+                <label asp-for="TaskTitle" class=" form-label"></label>
+                <input asp-for="TaskTitle" class="todo-input" />
                 <span asp-validation-for="TaskTitle" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
+            @*  <div class="form-group">
+                <label asp-for="CreatedAt" class=" form-label"></label>
+                <input asp-for="CreatedAt" class="todo-input" />
                 <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>
+                </div>*@
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+                <label asp-for="Description" class=" form-label"></label>
+                <input asp-for="Description" class="todo-input" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Priority" class="control-label"></label>
-                <select asp-for="Priority" class="form-control">
-                    <option value="1">Low</option>
-                    <option value="2">Medium</option>
-                    <option value="3">High</option>
+                <label asp-for="Priority" class=" form-label"></label>
+                <select asp-for="Priority" class="todo-input">
+                    <option value="1" class="options">Low</option>
+                    <option value="2" class="options">Medium</option>
+                    <option value="3" class="options">High</option>
                 </select>
                 <span asp-validation-for="Priority" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
         </form>
+        <div class="buttons-container mt-4">
+            <div class="row w-100 d-flex justify-content-end">
+                <div class="col-md-3 col-sm-3">
+                    <a asp-action="Index" class="btn todo-button-back">Back to List</a>
+                </div>
+                <div class="col-md-4 col-sm-5 ">
+                    <input type="submit" form="edit-task-form" value="Create" class="btn todo-button-create" />
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{

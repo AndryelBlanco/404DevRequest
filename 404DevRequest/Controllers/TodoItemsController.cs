@@ -51,6 +51,8 @@ namespace _404DevRequest.Controllers
             {
                 try
                 {
+                    DateTime dateTime = DateTime.Today;
+                    newTodo.CreatedAt = dateTime.ToString("MM/dd/yyyy");
                     await _mongoRepo.CreateAsync(newTodo);
                     return RedirectToAction("Index");
                 }
@@ -95,6 +97,7 @@ namespace _404DevRequest.Controllers
         {
             var todoToEdit = await _mongoRepo.GetAsync(id);
             newTodo.Id = todoToEdit.Id;
+            newTodo.CreatedAt = todoToEdit.CreatedAt;
             if (todoToEdit == null)
             {
                 return NotFound();

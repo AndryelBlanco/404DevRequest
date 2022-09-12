@@ -25,7 +25,7 @@ namespace _404DevRequest.Models
 
         [Required]
         [Display(Name = "Task description")]
-        [StringLength(350, MinimumLength = 50)]
+        [StringLength(350, MinimumLength = 30)]
         [BsonRequired()]
         [BsonElement("Description")]
         public string Description { get; set; }
